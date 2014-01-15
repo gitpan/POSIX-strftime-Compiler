@@ -6,7 +6,7 @@ use warnings;
 use Carp;
 use Time::Local qw//;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 use constant {
     SEC => 0,
@@ -333,7 +333,7 @@ __END__
 
 =head1 NAME
 
-POSIX::strftime::Compiler - Compile strftime to perl. for logger and servers
+POSIX::strftime::Compiler - Compile strftime to perl. for loggers and servers
 
 =head1 SYNOPSIS
 
@@ -347,10 +347,11 @@ POSIX::strftime::Compiler - Compile strftime to perl. for logger and servers
 POSIX::strftime::Compiler compiles strftime's format to perl. And generates formatted string.
 Because this module compiles strftime to perl code, it has good performance.
 
-POSIX::strftime::Compiler has compatibility with GNU's strftime, but only supports "C" locale.
-It's useful for loggers and servers. 
+POSIX::strftime::Compiler has compatibility with GNU's strftime, but this module will not 
+affected by the system locale. Because this module does not use strftime(3). 
+This feature is useful when you want to write loggers, servers and portable applications.
 
-=head1 METHDO
+=head1 METHODS
 
 =over 4
 

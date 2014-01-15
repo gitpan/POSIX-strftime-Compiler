@@ -1,5 +1,5 @@
 ---
-abstract: 'Compile strftime to perl. for logger and servers'
+abstract: 'Compile strftime to perl. for loggers and servers'
 author:
   - 'Masahiro Nagano <kazeburo@gmail.com>'
 build_requires:
@@ -28,7 +28,7 @@ no_index:
 provides:
   POSIX::strftime::Compiler:
     file: lib/POSIX/strftime/Compiler.pm
-    version: 0.01
+    version: 0.02
 requires:
   Carp: 0
   Time::Local: 0
@@ -37,4 +37,4 @@ resources:
   bugtracker: https://github.com/kazeburo/POSIX-strftime-Compiler/issues
   homepage: https://github.com/kazeburo/POSIX-strftime-Compiler
   repository: git://github.com/kazeburo/POSIX-strftime-Compiler.git
-version: 0.01
+version: 0.02
