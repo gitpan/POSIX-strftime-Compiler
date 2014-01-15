@@ -12,5 +12,6 @@ t/01_basic.t
 t/02_timezone.pl
 t/02_timezone.t
 t/03_isoweek.t
+t/04_tzset.t
 META.yml
 MANIFEST
