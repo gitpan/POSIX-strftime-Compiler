@@ -9,7 +9,7 @@ my $inc = join ' ', map { "-I\"$_\"" } @INC;
 my $dir = dirname(__FILE__);
 
 my $found;
-for my $tz (qw( Poland CET-1CEST )) {
+for my $tz (qw( Europe/Paris CET-1CEST )) {
     $ENV{TZ} = $tz;
     if (`$^X $inc $dir/02_timezone.pl %z 0 0 0 1 1 112` =~ /^\+0[12]00$/) {
         $found = 1;
