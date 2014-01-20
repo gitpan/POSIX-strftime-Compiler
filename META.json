@@ -1,5 +1,5 @@
 {
-   "abstract" : "strftime for loggers and servers",
+   "abstract" : "GNU compatible strftime for loggers and servers",
    "author" : [
       "Masahiro Nagano <kazeburo@gmail.com>"
    ],
@@ -59,7 +59,7 @@
    "provides" : {
       "POSIX::strftime::Compiler" : {
          "file" : "lib/POSIX/strftime/Compiler.pm",
-         "version" : "0.05"
+         "version" : "0.06"
       }
    },
    "release_status" : "stable",
@@ -73,5 +73,5 @@
          "web" : "https://github.com/kazeburo/POSIX-strftime-Compiler"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
