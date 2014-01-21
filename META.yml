@@ -1,5 +1,5 @@
 ---
-abstract: 'GNU compatible strftime for loggers and servers'
+abstract: 'GNU C library compatible strftime for loggers and servers'
 author:
   - 'Masahiro Nagano <kazeburo@gmail.com>'
 build_requires:
@@ -28,7 +28,7 @@ no_index:
 provides:
   POSIX::strftime::Compiler:
     file: lib/POSIX/strftime/Compiler.pm
-    version: 0.06
+    version: 0.10
 requires:
   Carp: 0
   Exporter: 0
@@ -39,4 +39,4 @@ resources:
   bugtracker: https://github.com/kazeburo/POSIX-strftime-Compiler/issues
   homepage: https://github.com/kazeburo/POSIX-strftime-Compiler
   repository: git://github.com/kazeburo/POSIX-strftime-Compiler.git
-version: 0.06
+version: 0.10
