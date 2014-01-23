@@ -5,6 +5,7 @@ META.json
 README.md
 cpanfile
 eg/benchmark.pl
+eg/benchmark_args.pl
 eg/benchmark_tz.pl
 lib/POSIX/strftime/Compiler.pm
 minil.toml

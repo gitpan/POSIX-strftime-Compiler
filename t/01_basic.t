@@ -73,6 +73,8 @@ my %format = (
     z      => '+0000',
     Z      => qr/^(GMT|UTC)$/,
     '%'    => '%',
+    Q      => '%Q', #unknown
+    q      => '%q', #unknown
 );
 
 my @t = localtime timelocal(54, 3, 21, 6, 6, 108);
@@ -84,17 +86,29 @@ foreach my $f (sort keys %format) {
     }
     else {
         is( POSIX::strftime::Compiler::strftime('%'.$f,@t), $format{$f}, '%'.$f);
+        is( POSIX::strftime::Compiler::strftime('%'.$f.'foo',@t), $format{$f}.'foo', '%'.$f);
+        is( POSIX::strftime::Compiler::strftime('%'.$f.' foo',@t), $format{$f}.' foo', '%'.$f);
     }
 }
 
+@t = (54.123456, 3, 21, 6, 6, 108);
 foreach my $f (sort keys %format) {
     if ( ref $format{$f} ) {
-        like( POSIX::strftime::Compiler::strftime('%'.$f,(54.123456, 3, 21, 6, 6, 108)), $format{$f}, '%'.$f.'=6');
+        like( POSIX::strftime::Compiler::strftime('%'.$f,@t), $format{$f}, '%'.$f.'=6');
     }
     else {
-        is( POSIX::strftime::Compiler::strftime('%'.$f,(54.123456, 3, 21, 6, 6, 108)), $format{$f}, '%'.$f. '=6');
+        is( POSIX::strftime::Compiler::strftime('%'.$f,@t), $format{$f}, '%'.$f. '=6');
+        is( POSIX::strftime::Compiler::strftime('%'.$f.'foo',@t), $format{$f}.'foo', '%'.$f.'foo=6');
+        is( POSIX::strftime::Compiler::strftime('%'.$f.' foo',@t), $format{$f}.' foo', '%'.$f.' foo=6');
     }
 }
+
+
+#last single %
+is( POSIX::strftime::Compiler::strftime('foo %',@t), 'foo %', 'last %');
+#last single %
+is( POSIX::strftime::Compiler::strftime('foo %',(54.123456, 3, 21, 6, 6, 108)), 'foo %', 'last % =6');
+
 
 done_testing();
 

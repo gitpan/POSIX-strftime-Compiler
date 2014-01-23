@@ -46,11 +46,18 @@ converts some format characters to perl code
 POSIX::strftime::Compiler supports almost all characters that GNU strftime(3) supports. 
 But `%E[cCxXyY]` and `%O[deHImMSuUVwWy]` are not supported, just remove E and O prefix.
 
+# A RECOMMEND MODULE
+
+- [Time::TZOffset](http://search.cpan.org/perldoc?Time::TZOffset)
+
+    If [Time::TZOffset](http://search.cpan.org/perldoc?Time::TZOffset) is available, P::s::Compiler use it for more faster time zone offset calculation.
+    I strongly recommend you to install this if you use `%z`.
+
 # PERFORMANCE ISSUES ON WINDOWS
 
 Windows and Cygwin and some system may not support `%z` and `%Z`. For these system, 
 POSIX::strftime::Compiler calculate time zone offset and find zone name. This is not fast.
-If you need performance on Windows and Cygwin, please install [POSIX::strftime::GNU](http://search.cpan.org/perldoc?POSIX::strftime::GNU)
+If you need performance on Windows and Cygwin, please install [Time::TZOffset](http://search.cpan.org/perldoc?Time::TZOffset)
 
 # SEE ALSO
 
