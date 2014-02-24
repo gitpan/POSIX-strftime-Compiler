@@ -8,7 +8,7 @@ use Time::Local qw//;
 use POSIX qw//;
 use base qw/Exporter/;
 
-our $VERSION = "0.30";
+our $VERSION = "0.31";
 our @EXPORT_OK = qw/strftime/;
 
 use constant {
@@ -268,6 +268,9 @@ if ( $^O =~ m!^(MSWin32|cygwin)$!i ) {
         'z' => [q!tzoffset(@_)!,1],
         'Z' => [q!tzname(@_)!,1],
     );
+}
+elsif ( $^O =~ m!^solaris$!i ) {
+    $LOCALE_CHARS{s} = [q!int(Time::Local::timegm(@_))!,1];
 }
 
 my $sprintf_char_handler = sub {

@@ -62,7 +62,7 @@
    "provides" : {
       "POSIX::strftime::Compiler" : {
          "file" : "lib/POSIX/strftime/Compiler.pm",
-         "version" : "0.30"
+         "version" : "0.31"
       }
    },
    "release_status" : "stable",
@@ -76,5 +76,5 @@
          "web" : "https://github.com/kazeburo/POSIX-strftime-Compiler"
       }
    },
-   "version" : "0.30"
+   "version" : "0.31"
 }
