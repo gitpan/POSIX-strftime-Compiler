@@ -1,6 +1,6 @@
 package POSIX::strftime::Compiler;
 
-use 5.008004;
+use 5.008001;
 use strict;
 use warnings;
 use Carp;
@@ -8,7 +8,7 @@ use Time::Local qw//;
 use POSIX qw//;
 use base qw/Exporter/;
 
-our $VERSION = "0.31";
+our $VERSION = "0.32";
 our @EXPORT_OK = qw/strftime/;
 
 use constant {
