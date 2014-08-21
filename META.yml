@@ -28,7 +28,7 @@ no_index:
 provides:
   POSIX::strftime::Compiler:
     file: lib/POSIX/strftime/Compiler.pm
-    version: '0.32'
+    version: '0.40'
 requires:
   Carp: '0'
   Exporter: '0'
@@ -39,6 +39,6 @@ resources:
   bugtracker: https://github.com/kazeburo/POSIX-strftime-Compiler/issues
   homepage: https://github.com/kazeburo/POSIX-strftime-Compiler
   repository: git://github.com/kazeburo/POSIX-strftime-Compiler.git
-version: '0.32'
+version: '0.40'
 x_contributors:
   - 'Piotr Roszatycki <piotr.roszatycki@gmail.com>'
